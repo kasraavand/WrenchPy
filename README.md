@@ -1,1 +1,1 @@
-Phantasma is a collection of python functions that has been writen for solve the difficult and unusual tasks.
+Phantasma is a collection of pythonic and optimized functions that has been writen to solve the difficult and unusual python tasks.

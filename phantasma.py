@@ -18,3 +18,9 @@ class datastructure(object):
 	              return find_intersection(m_list)
 	    return m_list
 		
+	def typecounter(iterable,tp):
+		"""
+		>>> typecounter([1,2,[[[]]],[[]],3,4,[1,2,3,4,[[]]] ],list)
+           8
+		"""
+		return sum(1+typecounter(i,tp) for i in iterable if isinstance(i,tp))

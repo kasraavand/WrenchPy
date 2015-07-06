@@ -1,7 +1,7 @@
 class datastructure(object):
 
-	"""this class contains functions for interaction between datastructural tasks
-	   like lists,tuples,dictionaries and ... 
+	"""this class is contain the functions that has beed writen for interact
+	with data structural tasks.  
 	"""
 
 	def find_intersection(m_list):

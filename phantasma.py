@@ -20,7 +20,13 @@ class datastructure(object):
 		
 	def typecounter(iterable,tp):
 		"""
-		>>> typecounter([1,2,[[[]]],[[]],3,4,[1,2,3,4,[[]]] ],list)
-           8
+		    typecounter([1,2,[[[]]],[[]],3,4,[1,2,3,4,[[]]] ],list)
+		    8
 		"""
 		return sum(1+typecounter(i,tp) for i in iterable if isinstance(i,tp))
+
+
+class text(object):
+	"""
+		contains the functions for doing text processing tasks
+	"""

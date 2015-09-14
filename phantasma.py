@@ -25,6 +25,13 @@ class datastructure(object):
 		"""
 		return sum(1+typecounter(i,tp) for i in iterable if isinstance(i,tp))
 
+	def split_with_iterable(main_list,delimiters):
+		"""
+		    split an iterable like a list with another iterable
+		
+		"""
+		from itertools import groupby
+        return [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
 
 class text(object):
 	"""

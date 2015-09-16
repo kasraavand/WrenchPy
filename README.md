@@ -1,4 +1,4 @@
-Phantasma is a collection of <b>[pythonic](https://www.python.org/dev/peps/pep-0008/)<sup>1</sup> and optimized</b> functions that has been writen to solve the <b>difficult and unusual</b> python tasks.
+WrenchPy is a collection of <b>[pythonic](https://www.python.org/dev/peps/pep-0008/)<sup>1</sup> and optimized</b> functions that has been writen to solve the <b>difficult and unusual</b> python tasks.
 
 <hr>
 

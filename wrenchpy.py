@@ -38,6 +38,18 @@ class datastructure:
         """
         return [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
 
+    def find_postorder(self, preorder, prestart=0, inorder, inostart=0, length):
+        """ Find the postorder traversal of a tree from it's preorder and inorder traversals."""
+        if length == 0:
+            yield
+
+        for i in range(inostart, inostart + length):
+            if preorder[prestart] == inorder[i]:
+                break
+        self.find_postorder(preorder, prestart + 1, inorder, inostart, i - inostart)
+        self.find_postorder(preorder, prestart + i - inostart + 1, inorder, i + 1, length - i + inostart - 1)
+        yield preorder[prestart]
+
 
 class text:
     """

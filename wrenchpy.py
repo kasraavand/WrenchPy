@@ -3,7 +3,7 @@ from itertools import groupby
 from math import sqrt
 
 
-class datastructure(object):
+class datastructure:
 
     """This class is contain the functions that has been written for interacting
        with data structural tasks.
@@ -31,7 +31,7 @@ class datastructure(object):
         """
         return sum(1 + self.typecounter(i, tp) for i in iterable if isinstance(i, tp))
 
-    def split_with_iterable(main_list, delimiters):
+    def split_with_iterable(self, main_list, delimiters):
         """
             Split an iterable like a list with another iterable.
 
@@ -39,12 +39,12 @@ class datastructure(object):
         return [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
 
 
-class text(object):
+class text:
     """
         Contains functions related to text processing tasks.
     """
 
-class Number(object):
+class Number:
     """Numberic tasks """
     def __init__(self):
         pass

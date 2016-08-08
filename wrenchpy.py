@@ -35,6 +35,11 @@ class datastructure:
         """
             Split an iterable like a list with another iterable.
 
+            >>> main_list = range(20)
+            >>> delimiters = range(0, 20, 5)
+            >>>
+            >>> [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
+            [[1, 2, 3, 4], [6, 7, 8, 9], [11, 12, 13, 14], [16, 17, 18, 19]]
         """
         return [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
 

@@ -43,8 +43,10 @@ class datastructure:
         """
         return [list(g) for k, g in groupby(main_list, delimiters.__contains__) if not k]
 
-    def find_postorder(self, preorder, prestart=0, inorder, inostart=0, length):
-        """ Find the postorder traversal of a tree from it's preorder and inorder traversals."""
+    def find_postorder(self, preorder, inorder, length, prestart=0, inostart=0):
+        """
+        Find the postorder traversal of a tree from it's preorder and inorder traversals.
+        """
         if length == 0:
             yield
 
@@ -60,6 +62,7 @@ class text:
     """
         Contains functions related to text processing tasks.
     """
+
 
 class Number:
     """Numberic tasks """

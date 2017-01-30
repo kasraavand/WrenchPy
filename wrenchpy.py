@@ -173,7 +173,62 @@ class text:
     """
         Contains functions related to text processing tasks.
     """
+    def remove_word(self, chunk, word):
+        """
+        This function recieve a chunk and a word, removes the occurrences
+        of the word from text recursively by this criteria that sub strings 
+        with lower lexicographically order have more priority.
+        
+        example:
+        answer(lololl, lol)
+        ''
+        answer('kxogogomploogogogogo', 'ogogo')
+        kxmpl
+        
+        """
+        l = len(word)
+        overlap_indices = [i for i in range(1, l) if word[:i] == word[-i:]]
+        if overlap_indices:
+            min_ind = overlap_indices[0]
 
+            def answer_inner(chunk):
+                    s = ''
+                    i = 0
+                    while i < len(chunk):
+                        if chunk[i:i + l] == word:
+                            temp = []
+                            flag = 0
+                            for x in overlap_indices[::-1]:
+                                ch = chunk[i + l - x:i + 2 * l - x]
+                                if ch == word:
+                                    flag = x
+                                    y = i + 2 * l - x
+                                    xyz = chunk[i:y - l] + chunk[y: y + (x - min_ind)]
+                                    temp.append(xyz)
+                            if flag:
+                                xyz = chunk[i + l:i + 2 * l - min_ind]
+                                temp.append(xyz)
+                                lst = [t + chunk[i + 2 * l - x:] for t in temp]
+                                result = (answer_inner(s + k) if word in s + k else s + k for k in lst)
+                                final = min(result, key=lambda t: (len(t), t))
+                                if word in final:
+                                    return answer_inner(final)
+                                return final
+                            else:
+                                final = s + chunk[i + l:]
+                                if word in final:
+                                    return answer_inner(final)
+                                return final
+                        else:
+                            s += chunk[i]
+                            i += 1
+                    return s
+
+            return answer_inner(chunk)
+
+        else:
+            return chunk.replace(word, '')
+        
 
 class Number:
     """Numberic tasks """
